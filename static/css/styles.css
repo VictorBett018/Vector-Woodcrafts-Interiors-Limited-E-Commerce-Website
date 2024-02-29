@@ -877,8 +877,7 @@ nav {
 .form-box{
   margin-left: 100px;
   width: 380px;
-  height: 600px;
-  position: relative;
+  height: 580px;
   background: transparent;
   border: 1px solid black;
   border-radius: 5px;
@@ -905,11 +904,9 @@ nav {
   cursor: pointer;
 }*/
 .input-group{
-  top: 140px;
-  position: relative;
   width: 280px;
   transition: .5s;
-  margin-bottom: 40px;
+  margin: auto;
 }
 .input-field {
   width: 100%;

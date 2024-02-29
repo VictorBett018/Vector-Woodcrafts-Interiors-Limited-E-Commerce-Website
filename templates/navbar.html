@@ -33,23 +33,26 @@
             <button><i class="ri-search-line"></i></button>
           </form></li>
         </ul>
+       
+       
         <div class="nav__menu__btn" id="menu-btn">
           <span><i class="ri-menu-line"></i></span>
         </div>
         
 
-        {% if request.user.customer %}
+        {% if request.user.is_authenticated %}
         <div class="nav__actions">
           <span><a href="#"><i class="ri-shopping-cart-2-fill"></i> </a></span>
           <span><a href="#"><i class="ri-user-fill"></i>{{request.user.username}}</a></span>
-          <span><a href="#">logout</a></span>
+          <span><a href="{% url 'signout' %}">Logout</a></span>
         </div>
         {% else %}
         <div class="nav__actions">
           <span><a href="#"><i class="ri-shopping-cart-2-fill"></i> </a></span>
-          <span><a href="{% url 'login' %}"><i class="ri-user-fill"></i></a></span>
+          <span><a href="{% url 'user_login' %}"><i class="ri-user-fill"></i></a></span>
         </div>
         {% endif %}
       </nav>
       {% block content %}
+      
       {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'navbar.html' %}
 {% load static %}
 {% block content %}
+{% include 'social_icons.html' %}
 
 <div class="hero">
     <div class="form-box">
@@ -10,14 +11,13 @@
             <img src="img/icons8-instagram.svg" alt="">
            </div> -->  
        
-    <form id="login" class="input-group" action="">
-        <input type="text" class="input-field" placeholder="Enter email" required>
-        <input type="password" class="input-field" placeholder="Enter password" required>
+    <form id="login" method="post" class="input-group" action="">
+        {% csrf_token %}
+        <input type="text" name="username"class="input-field"  placeholder="Enter username" required>
+        <input type="password" name="password" class="input-field" placeholder="Enter password" required>
         <p class="p-formlog">Dont have an account? <a href="{% url 'signup' %}">Sign up</a></p>
-        <p class="p-formlog"><a href="http://">Forgotten password?</a></p>
-        
+        <p class="p-formlog"><a href="http://">Forgotten password?</a></p>      
         <button type="submit" class="submit-btn">Login </button>
-
     </form>
     </div>
 
